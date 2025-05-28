@@ -157,8 +157,6 @@ void initialize(float* U_array, float* V_array,
                 V_array[array_index] = 0.25f;
             }
         }
-    } else {
-        printf("Process %d: No perturbation in my block\n", my_rank);
     }
 }
 
@@ -389,8 +387,6 @@ int main(int argc, char **argv) {
     int my_rank, total_processes;
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
     MPI_Comm_size(MPI_COMM_WORLD, &total_processes);
-
-    printf("Process %d of %d: Starting Gray-Scott simulation\n", my_rank, total_processes);
 
     // Simulation parameters
     int global_grid_size = 128;  // Total grid size
